@@ -6,12 +6,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { PlayerModalComponent } from './player-modal/player-modal.component';
+import { AddUserComponent } from './add-user/add-user.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    PlayerModalComponent
+    PlayerModalComponent,
+    AddUserComponent
   ],
   imports: [
     BrowserModule,
