@@ -7,6 +7,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { PlayerModalComponent } from './player-modal/player-modal.component';
 import { AddUserComponent } from './add-user/add-user.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { AddUserComponent } from './add-user/add-user.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    MatDialogModule
+    MatDialogModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
