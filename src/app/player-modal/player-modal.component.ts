@@ -20,6 +20,10 @@ export class PlayerModalComponent implements OnInit {
   ngOnInit(): void {
     this.animate()
   }
+
+  newPlayer() {
+    throw new Error('Method not implemented.');
+  }
   
   closeModal() {
     this.dialogRef.close();
