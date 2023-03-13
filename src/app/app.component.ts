@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
 import { Player } from './models/player';
 import { PlayerModalComponent } from './player-modal/player-modal.component';
+import { PlayerService } from './player.service';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,9 @@ export class AppComponent {
 
   dialogConfig = new MatDialogConfig();
   modalDialog: MatDialogRef<PlayerModalComponent, any> | undefined;
-  constructor(public matDialog: MatDialog) { }
+
+  constructor(public matDialog: MatDialog, private playerService: PlayerService) { }
+
   ngAfterViewInit(): void {
     document.onclick = (args: any) : void => {
           if(args.target.tagName === 'BODY') {
@@ -29,7 +32,8 @@ export class AppComponent {
     this.modalDialog = this.matDialog.open(PlayerModalComponent, this.dialogConfig);
 
     this.modalDialog.afterClosed().subscribe(result => {
-      this.player = result;
+      this.playerService.createPlayer(result).subscribe(response => console.log(response));
+      this.player = result
     });
   }
 }
