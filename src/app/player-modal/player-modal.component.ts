@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import {bounceInDownAnimation} from  'angular-animations';
+import { Player } from '../models/player';
 
 @Component({
   selector: 'app-player-modal',
@@ -13,19 +14,21 @@ import {bounceInDownAnimation} from  'angular-animations';
 export class PlayerModalComponent implements OnInit {
   
   animationState: boolean;
+  @Input() player = new Player("Name", "Dummy", 0)
 
   constructor(public dialogRef: MatDialogRef<PlayerModalComponent>) { 
     this.animationState = false
   }
+
   ngOnInit(): void {
     this.animate()
   }
 
-  newPlayer() {
-    throw new Error('Method not implemented.');
-  }
-  
   closeModal() {
+    this.dialogRef.close(this.player)
+  }
+
+  closeCancel(){
     this.dialogRef.close();
   }
 

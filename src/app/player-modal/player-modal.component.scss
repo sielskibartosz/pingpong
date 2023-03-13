@@ -4,7 +4,6 @@
     display: grid;
     grid-template-rows: repeat(1fr, 3); 
 }
-
 #modal-title {
     font-size: 22px;
 }
@@ -22,4 +21,12 @@
 #animation-modal {
     height: 100%;
     width: 100%;
+}
+.ng-valid[required],
+.ng-valid.required {
+    border-left: 5px solid #42A948;
+}
+
+.ng-invalid:not(form) {
+    border-left: 5px solid #a94442;
 }

@@ -6,7 +6,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { PlayerModalComponent } from './player-modal/player-modal.component';
-import { AddUserComponent } from './add-user/add-user.component';
 import { FormsModule } from '@angular/forms';
 
 
@@ -14,7 +13,6 @@ import { FormsModule } from '@angular/forms';
   declarations: [
     AppComponent,
     PlayerModalComponent,
-    AddUserComponent
   ],
   imports: [
     BrowserModule,

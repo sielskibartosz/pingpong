@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
+import { Player } from './models/player';
 import { PlayerModalComponent } from './player-modal/player-modal.component';
 
 @Component({
@@ -9,6 +10,7 @@ import { PlayerModalComponent } from './player-modal/player-modal.component';
 })
 export class AppComponent {
   title = 'ping-pong-app';
+  player = new Player("","",0)
 
   dialogConfig = new MatDialogConfig();
   modalDialog: MatDialogRef<PlayerModalComponent, any> | undefined;
@@ -21,10 +23,13 @@ export class AppComponent {
       }
   }
   openModal() {
-  
     this.dialogConfig.id = "projects-modal-component";
     this.dialogConfig.height = "500px";
     this.dialogConfig.width = "650px";
     this.modalDialog = this.matDialog.open(PlayerModalComponent, this.dialogConfig);
+
+    this.modalDialog.afterClosed().subscribe(result => {
+      this.player = result;
+    });
   }
 }
